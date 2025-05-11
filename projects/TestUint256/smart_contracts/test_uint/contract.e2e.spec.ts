@@ -66,4 +66,29 @@ describe('AvmSatoshiDice contract', () => {
     })
     expect(data).toBe(1n)
   })
+  test('test interpretAsArc4', async () => {
+    const deployerAccount = await localnet.context.generateAccount({ initialFunds: AlgoAmount.Algo(10000) })
+    const deployerAccountAddr = algosdk.encodeAddress(deployerAccount.addr.publicKey)
+    const { client } = await deploy(deployerAccount)
+
+    const testsEqual: bigint[] = [0n, 1n, 2147483648n, 4294967296n, 18446744073709551615n]
+    for (let testData of testsEqual) {
+      let data = await client.convertToUintN64UsingInterpretAsArc4({
+        args: {
+          n: testData,
+        },
+      })
+      expect(data).toBe(testData)
+    }
+    const testsOverflow: bigint[] = [18446744073709551616n, 340282366920938463463374607431768211456n]
+    for (let testData of testsOverflow) {
+      await expect(
+        client.convertToUintN64UsingInterpretAsArc4({
+          args: {
+            n: testData,
+          },
+        }),
+      ).rejects.toThrow('overflow')
+    }
+  })
 })

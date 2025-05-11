@@ -1,4 +1,4 @@
-import { biguint, Contract, uint64 } from '@algorandfoundation/algorand-typescript'
+import { arc4, assert, biguint, bytes, Contract, uint64 } from '@algorandfoundation/algorand-typescript'
 import { abimethod, UintN256, UintN64 } from '@algorandfoundation/algorand-typescript/arc4'
 
 export class TestUint extends Contract {
@@ -23,5 +23,23 @@ export class TestUint extends Contract {
     // Step 3: Create a UintN64 from the lower 64 bits
     const uint64 = new UintN64(lower64)
     return uint64
+  }
+  @abimethod({ readonly: true })
+  ConvertToUintN64UsingInterpretAsArc4(n: UintN256): UintN64 {
+    // Check that all higher-order bytes are zero
+    const bytes: bytes = n.bytes
+    assert(bytes.length === 32)
+
+    const part1 = arc4.interpretAsArc4<arc4.UintN64>(bytes.slice(0, 8), 'none')
+    assert(part1.native === 0, 'Buffer overflow - part1')
+
+    const part2 = arc4.interpretAsArc4<arc4.UintN64>(bytes.slice(8, 16), 'none')
+    assert(part2.native === 0, 'Buffer overflow - part1')
+
+    const part3 = arc4.interpretAsArc4<arc4.UintN64>(bytes.slice(16, 24), 'none')
+    assert(part3.native === 0, 'Buffer overflow - part3')
+
+    const uint64Bytes = bytes.slice(24, 32)
+    return arc4.interpretAsArc4<arc4.UintN64>(uint64Bytes, 'none')
   }
 }

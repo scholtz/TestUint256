@@ -3,7 +3,7 @@
   "sources": [
     "C:/Users/ludko/source/repos/scholtz/TestUint256/projects/TestUint256/smart_contracts/test_uint/contract.algo.ts"
   ],
-  "mappings": ";;;;;;;;;;;;;AAGA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;AAAA;;AASG;;AAAA;AAAA;AAAA;;AAAA;AATH;;;AASG;;;AAAA;AAAA;AAAA;AAAA;AAAA;;AAJA;;AAAA;AAAA;AAAA;;AAAA;AALH;;;AAKG;;;AAAA;AAAA;AAAA;AAAA;AAAA;;AAJA;;AAAA;AAAA;AAAA;;AAAA;AADH;;;AACG;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AADH;;AAAA;;;AAAA;;AAAA;AAAA;AAAA;;AACE;;;AAES;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAsB;AAA7B;AAEF;;;AAES;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAP;AAEF;;;AAQQ;;AAAgC;;;;;;;;;;AAAb;AAGV;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AACf",
+  "mappings": ";;;;;;;;;;;;;AAGA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;AAAA;;AAuBG;;AAAA;AAAA;AAAA;;AAAA;AAvBH;;;AAuBG;;;AAAA;AAAA;AAAA;AAAA;AAAA;;AAdA;;AAAA;AAAA;AAAA;;AAAA;AATH;;;AASG;;;AAAA;AAAA;AAAA;AAAA;AAAA;;AAJA;;AAAA;AAAA;AAAA;;AAAA;AALH;;;AAKG;;;AAAA;AAAA;AAAA;AAAA;AAAA;;AAJA;;AAAA;AAAA;AAAA;;AAAA;AADH;;;AACG;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AADH;;AAAA;;;AAAA;;AAAA;AAAA;AAAA;;AACE;;;AAES;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAsB;AAA7B;AAEF;;;AAES;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAP;AAEF;;;AAQQ;;AAAgC;;;;;;;;;;AAAb;AAGV;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AACf;AAEF;;;AAMgB;;AAAmC;;;AACpC;AAAN;AAAP;AAEc;;AAAmC;;;AACpC;AAAN;AAAP;AAEc;;AAAmC;;;AACpC;AAAN;AAAP;AAEM;;AAAc;;;AACpB",
   "op_pc_offset": 0,
   "pc_events": {
     "1": {
@@ -26,12 +26,13 @@
       ]
     },
     "15": {
-      "op": "bz main_bare_routing@8",
+      "op": "bz main_bare_routing@9",
       "stack_out": []
     },
     "18": {
-      "op": "pushbytess 0x27cdcff4 0xdf2bb029 0xda0b60f3 // method \"uint256Touint64(uint256)uint64\", method \"uint256ToUintN64(uint256)uint64\", method \"safeConversion(uint256)uint64\"",
+      "op": "pushbytess 0x27cdcff4 0xdf2bb029 0xda0b60f3 0xbc57731a // method \"uint256Touint64(uint256)uint64\", method \"uint256ToUintN64(uint256)uint64\", method \"safeConversion(uint256)uint64\", method \"ConvertToUintN64UsingInterpretAsArc4(uint256)uint64\"",
       "defined_out": [
+        "Method(ConvertToUintN64UsingInterpretAsArc4(uint256)uint64)",
         "Method(safeConversion(uint256)uint64)",
         "Method(uint256ToUintN64(uint256)uint64)",
         "Method(uint256Touint64(uint256)uint64)"
@@ -39,12 +40,14 @@
       "stack_out": [
         "Method(uint256Touint64(uint256)uint64)",
         "Method(uint256ToUintN64(uint256)uint64)",
-        "Method(safeConversion(uint256)uint64)"
+        "Method(safeConversion(uint256)uint64)",
+        "Method(ConvertToUintN64UsingInterpretAsArc4(uint256)uint64)"
       ]
     },
-    "35": {
+    "40": {
       "op": "txna ApplicationArgs 0",
       "defined_out": [
+        "Method(ConvertToUintN64UsingInterpretAsArc4(uint256)uint64)",
         "Method(safeConversion(uint256)uint64)",
         "Method(uint256ToUintN64(uint256)uint64)",
         "Method(uint256Touint64(uint256)uint64)",
@@ -54,15 +57,16 @@
         "Method(uint256Touint64(uint256)uint64)",
         "Method(uint256ToUintN64(uint256)uint64)",
         "Method(safeConversion(uint256)uint64)",
+        "Method(ConvertToUintN64UsingInterpretAsArc4(uint256)uint64)",
         "tmp%2#0"
       ]
     },
-    "38": {
-      "op": "match main_uint256Touint64_route@3 main_uint256ToUintN64_route@4 main_safeConversion_route@5",
+    "43": {
+      "op": "match main_uint256Touint64_route@3 main_uint256ToUintN64_route@4 main_safeConversion_route@5 main_ConvertToUintN64UsingInterpretAsArc4_route@6",
       "stack_out": []
     },
-    "46": {
-      "block": "main_after_if_else@12",
+    "53": {
+      "block": "main_after_if_else@13",
       "stack_in": [],
       "op": "intc_2 // 0",
       "defined_out": [
@@ -72,11 +76,113 @@
         "tmp%0#0"
       ]
     },
-    "47": {
+    "54": {
       "op": "return",
       "stack_out": []
     },
-    "48": {
+    "55": {
+      "block": "main_ConvertToUintN64UsingInterpretAsArc4_route@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "tmp%20#0"
+      ]
+    },
+    "57": {
+      "op": "!",
+      "defined_out": [
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%21#0"
+      ]
+    },
+    "58": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "59": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "tmp%22#0"
+      ]
+    },
+    "61": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "62": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[32]%3#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[32]%3#0"
+      ]
+    },
+    "65": {
+      "callsub": "smart_contracts/test_uint/contract.algo.ts::TestUint.ConvertToUintN64UsingInterpretAsArc4",
+      "op": "callsub ConvertToUintN64UsingInterpretAsArc4",
+      "defined_out": [
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "tmp%24#0"
+      ]
+    },
+    "68": {
+      "op": "bytec_0 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "tmp%24#0",
+        "0x151f7c75"
+      ]
+    },
+    "69": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "tmp%24#0"
+      ]
+    },
+    "70": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "tmp%25#0"
+      ]
+    },
+    "71": {
+      "op": "log",
+      "stack_out": []
+    },
+    "72": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "73": {
+      "op": "return",
+      "stack_out": []
+    },
+    "74": {
       "block": "main_safeConversion_route@5",
       "stack_in": [],
       "op": "txn OnCompletion",
@@ -87,7 +193,7 @@
         "tmp%14#0"
       ]
     },
-    "50": {
+    "76": {
       "op": "!",
       "defined_out": [
         "tmp%15#0"
@@ -96,12 +202,12 @@
         "tmp%15#0"
       ]
     },
-    "51": {
+    "77": {
       "error": "OnCompletion is not NoOp",
       "op": "assert // OnCompletion is not NoOp",
       "stack_out": []
     },
-    "52": {
+    "78": {
       "op": "txn ApplicationID",
       "defined_out": [
         "tmp%16#0"
@@ -110,12 +216,12 @@
         "tmp%16#0"
       ]
     },
-    "54": {
+    "80": {
       "error": "can only call when not creating",
       "op": "assert // can only call when not creating",
       "stack_out": []
     },
-    "55": {
+    "81": {
       "op": "txna ApplicationArgs 1",
       "defined_out": [
         "reinterpret_bytes[32]%2#0"
@@ -124,7 +230,7 @@
         "reinterpret_bytes[32]%2#0"
       ]
     },
-    "58": {
+    "84": {
       "callsub": "smart_contracts/test_uint/contract.algo.ts::TestUint.safeConversion",
       "op": "callsub safeConversion",
       "defined_out": [
@@ -134,7 +240,7 @@
         "tmp%18#0"
       ]
     },
-    "61": {
+    "87": {
       "op": "bytec_0 // 0x151f7c75",
       "defined_out": [
         "0x151f7c75",
@@ -145,14 +251,14 @@
         "0x151f7c75"
       ]
     },
-    "62": {
+    "88": {
       "op": "swap",
       "stack_out": [
         "0x151f7c75",
         "tmp%18#0"
       ]
     },
-    "63": {
+    "89": {
       "op": "concat",
       "defined_out": [
         "tmp%19#0"
@@ -161,11 +267,11 @@
         "tmp%19#0"
       ]
     },
-    "64": {
+    "90": {
       "op": "log",
       "stack_out": []
     },
-    "65": {
+    "91": {
       "op": "intc_0 // 1",
       "defined_out": [
         "tmp%0#0"
@@ -174,11 +280,11 @@
         "tmp%0#0"
       ]
     },
-    "66": {
+    "92": {
       "op": "return",
       "stack_out": []
     },
-    "67": {
+    "93": {
       "block": "main_uint256ToUintN64_route@4",
       "stack_in": [],
       "op": "txn OnCompletion",
@@ -189,7 +295,7 @@
         "tmp%8#0"
       ]
     },
-    "69": {
+    "95": {
       "op": "!",
       "defined_out": [
         "tmp%9#0"
@@ -198,12 +304,12 @@
         "tmp%9#0"
       ]
     },
-    "70": {
+    "96": {
       "error": "OnCompletion is not NoOp",
       "op": "assert // OnCompletion is not NoOp",
       "stack_out": []
     },
-    "71": {
+    "97": {
       "op": "txn ApplicationID",
       "defined_out": [
         "tmp%10#0"
@@ -212,12 +318,12 @@
         "tmp%10#0"
       ]
     },
-    "73": {
+    "99": {
       "error": "can only call when not creating",
       "op": "assert // can only call when not creating",
       "stack_out": []
     },
-    "74": {
+    "100": {
       "op": "txna ApplicationArgs 1",
       "defined_out": [
         "reinterpret_bytes[32]%1#0"
@@ -226,7 +332,7 @@
         "reinterpret_bytes[32]%1#0"
       ]
     },
-    "77": {
+    "103": {
       "callsub": "smart_contracts/test_uint/contract.algo.ts::TestUint.uint256ToUintN64",
       "op": "callsub uint256ToUintN64",
       "defined_out": [
@@ -236,7 +342,7 @@
         "tmp%12#0"
       ]
     },
-    "80": {
+    "106": {
       "op": "bytec_0 // 0x151f7c75",
       "defined_out": [
         "0x151f7c75",
@@ -247,14 +353,14 @@
         "0x151f7c75"
       ]
     },
-    "81": {
+    "107": {
       "op": "swap",
       "stack_out": [
         "0x151f7c75",
         "tmp%12#0"
       ]
     },
-    "82": {
+    "108": {
       "op": "concat",
       "defined_out": [
         "tmp%13#0"
@@ -263,11 +369,11 @@
         "tmp%13#0"
       ]
     },
-    "83": {
+    "109": {
       "op": "log",
       "stack_out": []
     },
-    "84": {
+    "110": {
       "op": "intc_0 // 1",
       "defined_out": [
         "tmp%0#0"
@@ -276,11 +382,11 @@
         "tmp%0#0"
       ]
     },
-    "85": {
+    "111": {
       "op": "return",
       "stack_out": []
     },
-    "86": {
+    "112": {
       "block": "main_uint256Touint64_route@3",
       "stack_in": [],
       "op": "txn OnCompletion",
@@ -291,7 +397,7 @@
         "tmp%3#0"
       ]
     },
-    "88": {
+    "114": {
       "op": "!",
       "defined_out": [
         "tmp%4#0"
@@ -300,12 +406,12 @@
         "tmp%4#0"
       ]
     },
-    "89": {
+    "115": {
       "error": "OnCompletion is not NoOp",
       "op": "assert // OnCompletion is not NoOp",
       "stack_out": []
     },
-    "90": {
+    "116": {
       "op": "txn ApplicationID",
       "defined_out": [
         "tmp%5#0"
@@ -314,12 +420,12 @@
         "tmp%5#0"
       ]
     },
-    "92": {
+    "118": {
       "error": "can only call when not creating",
       "op": "assert // can only call when not creating",
       "stack_out": []
     },
-    "93": {
+    "119": {
       "op": "txna ApplicationArgs 1",
       "defined_out": [
         "reinterpret_bytes[32]%0#0"
@@ -328,7 +434,7 @@
         "reinterpret_bytes[32]%0#0"
       ]
     },
-    "96": {
+    "122": {
       "callsub": "smart_contracts/test_uint/contract.algo.ts::TestUint.uint256Touint64",
       "op": "callsub uint256Touint64",
       "defined_out": [
@@ -338,7 +444,7 @@
         "to_encode%0#0"
       ]
     },
-    "99": {
+    "125": {
       "op": "itob",
       "defined_out": [
         "val_as_bytes%0#0"
@@ -347,7 +453,7 @@
         "val_as_bytes%0#0"
       ]
     },
-    "100": {
+    "126": {
       "op": "bytec_0 // 0x151f7c75",
       "defined_out": [
         "0x151f7c75",
@@ -358,14 +464,14 @@
         "0x151f7c75"
       ]
     },
-    "101": {
+    "127": {
       "op": "swap",
       "stack_out": [
         "0x151f7c75",
         "val_as_bytes%0#0"
       ]
     },
-    "102": {
+    "128": {
       "op": "concat",
       "defined_out": [
         "tmp%7#0"
@@ -374,11 +480,11 @@
         "tmp%7#0"
       ]
     },
-    "103": {
+    "129": {
       "op": "log",
       "stack_out": []
     },
-    "104": {
+    "130": {
       "op": "intc_0 // 1",
       "defined_out": [
         "tmp%0#0"
@@ -387,49 +493,49 @@
         "tmp%0#0"
       ]
     },
-    "105": {
+    "131": {
       "op": "return",
       "stack_out": []
     },
-    "106": {
-      "block": "main_bare_routing@8",
+    "132": {
+      "block": "main_bare_routing@9",
       "stack_in": [],
       "op": "txn OnCompletion",
       "defined_out": [
-        "tmp%20#0"
+        "tmp%26#0"
       ],
       "stack_out": [
-        "tmp%20#0"
+        "tmp%26#0"
       ]
     },
-    "108": {
-      "op": "bnz main_after_if_else@12",
+    "134": {
+      "op": "bnz main_after_if_else@13",
       "stack_out": []
     },
-    "111": {
+    "137": {
       "op": "txn ApplicationID",
       "defined_out": [
-        "tmp%21#0"
+        "tmp%27#0"
       ],
       "stack_out": [
-        "tmp%21#0"
+        "tmp%27#0"
       ]
     },
-    "113": {
+    "139": {
       "op": "!",
       "defined_out": [
-        "tmp%22#0"
+        "tmp%28#0"
       ],
       "stack_out": [
-        "tmp%22#0"
+        "tmp%28#0"
       ]
     },
-    "114": {
+    "140": {
       "error": "can only call when creating",
       "op": "assert // can only call when creating",
       "stack_out": []
     },
-    "115": {
+    "141": {
       "op": "intc_0 // 1",
       "defined_out": [
         "tmp%0#0"
@@ -438,11 +544,11 @@
         "tmp%0#0"
       ]
     },
-    "116": {
+    "142": {
       "op": "return",
       "stack_out": []
     },
-    "117": {
+    "143": {
       "subroutine": "smart_contracts/test_uint/contract.algo.ts::TestUint.uint256Touint64",
       "params": {
         "n#0": "bytes"
@@ -451,7 +557,7 @@
       "stack_in": [],
       "op": "proto 1 1"
     },
-    "120": {
+    "146": {
       "op": "intc_2 // 0",
       "defined_out": [
         "0"
@@ -460,12 +566,12 @@
         "0"
       ]
     },
-    "121": {
+    "147": {
       "error": "overflow",
       "op": "assert // overflow",
       "stack_out": []
     },
-    "122": {
+    "148": {
       "op": "intc_1 // 8",
       "defined_out": [
         "8"
@@ -474,7 +580,7 @@
         "8"
       ]
     },
-    "123": {
+    "149": {
       "op": "bzero",
       "defined_out": [
         "bzero%0#0"
@@ -483,7 +589,7 @@
         "bzero%0#0"
       ]
     },
-    "124": {
+    "150": {
       "op": "frame_dig -1",
       "defined_out": [
         "bzero%0#0",
@@ -494,7 +600,7 @@
         "n#0 (copy)"
       ]
     },
-    "126": {
+    "152": {
       "op": "b|",
       "defined_out": [
         "arc4_encoded%0#0"
@@ -503,7 +609,7 @@
         "arc4_encoded%0#0"
       ]
     },
-    "127": {
+    "153": {
       "op": "btoi",
       "defined_out": [
         "tmp%0#0"
@@ -512,11 +618,11 @@
         "tmp%0#0"
       ]
     },
-    "128": {
+    "154": {
       "retsub": true,
       "op": "retsub"
     },
-    "129": {
+    "155": {
       "subroutine": "smart_contracts/test_uint/contract.algo.ts::TestUint.uint256ToUintN64",
       "params": {
         "n#0": "bytes"
@@ -525,7 +631,7 @@
       "stack_in": [],
       "op": "proto 1 1"
     },
-    "132": {
+    "158": {
       "op": "intc_2 // 0",
       "defined_out": [
         "0"
@@ -534,12 +640,12 @@
         "0"
       ]
     },
-    "133": {
+    "159": {
       "error": "overflow",
       "op": "assert // overflow",
       "stack_out": []
     },
-    "134": {
+    "160": {
       "op": "intc_1 // 8",
       "defined_out": [
         "8"
@@ -548,7 +654,7 @@
         "8"
       ]
     },
-    "135": {
+    "161": {
       "op": "bzero",
       "defined_out": [
         "bzero%0#0"
@@ -557,7 +663,7 @@
         "bzero%0#0"
       ]
     },
-    "136": {
+    "162": {
       "op": "frame_dig -1",
       "defined_out": [
         "bzero%0#0",
@@ -568,7 +674,7 @@
         "n#0 (copy)"
       ]
     },
-    "138": {
+    "164": {
       "op": "b|",
       "defined_out": [
         "arc4_encoded%0#0"
@@ -577,11 +683,11 @@
         "arc4_encoded%0#0"
       ]
     },
-    "139": {
+    "165": {
       "retsub": true,
       "op": "retsub"
     },
-    "140": {
+    "166": {
       "subroutine": "smart_contracts/test_uint/contract.algo.ts::TestUint.safeConversion",
       "params": {
         "n#0": "bytes"
@@ -590,7 +696,7 @@
       "stack_in": [],
       "op": "proto 1 1"
     },
-    "143": {
+    "169": {
       "op": "frame_dig -1",
       "defined_out": [
         "n#0 (copy)"
@@ -599,7 +705,7 @@
         "n#0 (copy)"
       ]
     },
-    "145": {
+    "171": {
       "op": "pushbytes 0xffffffffffffffff",
       "defined_out": [
         "0xffffffffffffffff",
@@ -610,7 +716,7 @@
         "0xffffffffffffffff"
       ]
     },
-    "155": {
+    "181": {
       "op": "b&",
       "defined_out": [
         "lower64#0"
@@ -619,7 +725,7 @@
         "lower64#0"
       ]
     },
-    "156": {
+    "182": {
       "op": "dup",
       "defined_out": [
         "lower64#0",
@@ -630,7 +736,7 @@
         "lower64#0 (copy)"
       ]
     },
-    "157": {
+    "183": {
       "op": "len",
       "defined_out": [
         "lower64#0",
@@ -641,7 +747,7 @@
         "value_len%0#0"
       ]
     },
-    "158": {
+    "184": {
       "op": "intc_1 // 8",
       "defined_out": [
         "8",
@@ -654,7 +760,7 @@
         "8"
       ]
     },
-    "159": {
+    "185": {
       "op": "<=",
       "defined_out": [
         "len_ok%0#0",
@@ -665,21 +771,21 @@
         "len_ok%0#0"
       ]
     },
-    "160": {
+    "186": {
       "error": "overflow",
       "op": "assert // overflow",
       "stack_out": [
         "lower64#0"
       ]
     },
-    "161": {
+    "187": {
       "op": "intc_1 // 8",
       "stack_out": [
         "lower64#0",
         "8"
       ]
     },
-    "162": {
+    "188": {
       "op": "bzero",
       "defined_out": [
         "bzero%0#0",
@@ -690,7 +796,7 @@
         "bzero%0#0"
       ]
     },
-    "163": {
+    "189": {
       "op": "b|",
       "defined_out": [
         "uint64#0"
@@ -699,7 +805,152 @@
         "uint64#0"
       ]
     },
-    "164": {
+    "190": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "191": {
+      "subroutine": "smart_contracts/test_uint/contract.algo.ts::TestUint.ConvertToUintN64UsingInterpretAsArc4",
+      "params": {
+        "n#0": "bytes"
+      },
+      "block": "ConvertToUintN64UsingInterpretAsArc4",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "194": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "n#0 (copy)"
+      ],
+      "stack_out": [
+        "n#0 (copy)"
+      ]
+    },
+    "196": {
+      "op": "substring 0 8",
+      "defined_out": [
+        "part1#0"
+      ],
+      "stack_out": [
+        "part1#0"
+      ]
+    },
+    "199": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "200": {
+      "op": "!",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "201": {
+      "error": "Buffer overflow - part1",
+      "op": "assert // Buffer overflow - part1",
+      "stack_out": []
+    },
+    "202": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "n#0 (copy)"
+      ]
+    },
+    "204": {
+      "op": "substring 8 16",
+      "defined_out": [
+        "part2#0"
+      ],
+      "stack_out": [
+        "part2#0"
+      ]
+    },
+    "207": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "208": {
+      "op": "!",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "209": {
+      "error": "Buffer overflow - part1",
+      "op": "assert // Buffer overflow - part1",
+      "stack_out": []
+    },
+    "210": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "n#0 (copy)"
+      ]
+    },
+    "212": {
+      "op": "substring 16 24",
+      "defined_out": [
+        "part3#0"
+      ],
+      "stack_out": [
+        "part3#0"
+      ]
+    },
+    "215": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "tmp%6#0"
+      ]
+    },
+    "216": {
+      "op": "!",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "217": {
+      "error": "Buffer overflow - part3",
+      "op": "assert // Buffer overflow - part3",
+      "stack_out": []
+    },
+    "218": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "n#0 (copy)"
+      ]
+    },
+    "220": {
+      "op": "substring 24 32",
+      "defined_out": [
+        "uint64Bytes#0"
+      ],
+      "stack_out": [
+        "uint64Bytes#0"
+      ]
+    },
+    "223": {
       "retsub": true,
       "op": "retsub"
     }
