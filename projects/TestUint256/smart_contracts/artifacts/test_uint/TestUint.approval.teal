@@ -1,0 +1,156 @@
+#pragma version 10
+#pragma typetrack false
+
+// @algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram() -> uint64:
+main:
+    intcblock 1 8 0
+    bytecblock 0x151f7c75
+    // smart_contracts/test_uint/contract.algo.ts:4
+    // export class TestUint extends Contract {
+    txn NumAppArgs
+    bz main_bare_routing@8
+    pushbytess 0x27cdcff4 0xdf2bb029 0xda0b60f3 // method "uint256Touint64(uint256)uint64", method "uint256ToUintN64(uint256)uint64", method "safeConversion(uint256)uint64"
+    txna ApplicationArgs 0
+    match main_uint256Touint64_route@3 main_uint256ToUintN64_route@4 main_safeConversion_route@5
+
+main_after_if_else@12:
+    // smart_contracts/test_uint/contract.algo.ts:4
+    // export class TestUint extends Contract {
+    intc_2 // 0
+    return
+
+main_safeConversion_route@5:
+    // smart_contracts/test_uint/contract.algo.ts:13
+    // @abimethod({ readonly: true })
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/test_uint/contract.algo.ts:4
+    // export class TestUint extends Contract {
+    txna ApplicationArgs 1
+    // smart_contracts/test_uint/contract.algo.ts:13
+    // @abimethod({ readonly: true })
+    callsub safeConversion
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_uint256ToUintN64_route@4:
+    // smart_contracts/test_uint/contract.algo.ts:9
+    // @abimethod({ readonly: true })
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/test_uint/contract.algo.ts:4
+    // export class TestUint extends Contract {
+    txna ApplicationArgs 1
+    // smart_contracts/test_uint/contract.algo.ts:9
+    // @abimethod({ readonly: true })
+    callsub uint256ToUintN64
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_uint256Touint64_route@3:
+    // smart_contracts/test_uint/contract.algo.ts:5
+    // @abimethod({ readonly: true })
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/test_uint/contract.algo.ts:4
+    // export class TestUint extends Contract {
+    txna ApplicationArgs 1
+    // smart_contracts/test_uint/contract.algo.ts:5
+    // @abimethod({ readonly: true })
+    callsub uint256Touint64
+    itob
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    return
+
+main_bare_routing@8:
+    // smart_contracts/test_uint/contract.algo.ts:4
+    // export class TestUint extends Contract {
+    txn OnCompletion
+    bnz main_after_if_else@12
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_0 // 1
+    return
+
+
+// smart_contracts/test_uint/contract.algo.ts::TestUint.uint256Touint64(n: bytes) -> uint64:
+uint256Touint64:
+    // smart_contracts/test_uint/contract.algo.ts:5-6
+    // @abimethod({ readonly: true })
+    // uint256Touint64(n: UintN256): uint64 {
+    proto 1 1
+    // smart_contracts/test_uint/contract.algo.ts:7
+    // return new UintN64(n.native).native
+    intc_2 // 0
+    assert // overflow
+    intc_1 // 8
+    bzero
+    frame_dig -1
+    b|
+    btoi
+    retsub
+
+
+// smart_contracts/test_uint/contract.algo.ts::TestUint.uint256ToUintN64(n: bytes) -> bytes:
+uint256ToUintN64:
+    // smart_contracts/test_uint/contract.algo.ts:9-10
+    // @abimethod({ readonly: true })
+    // uint256ToUintN64(n: UintN256): UintN64 {
+    proto 1 1
+    // smart_contracts/test_uint/contract.algo.ts:11
+    // return new UintN64(n.native)
+    intc_2 // 0
+    assert // overflow
+    intc_1 // 8
+    bzero
+    frame_dig -1
+    b|
+    retsub
+
+
+// smart_contracts/test_uint/contract.algo.ts::TestUint.safeConversion(n: bytes) -> bytes:
+safeConversion:
+    // smart_contracts/test_uint/contract.algo.ts:13-14
+    // @abimethod({ readonly: true })
+    // safeConversion(n: UintN256): UintN64 {
+    proto 1 1
+    // smart_contracts/test_uint/contract.algo.ts:21
+    // const lower64: biguint = native256 & ((1n << 64n) - 1n)
+    frame_dig -1
+    pushbytes 0xffffffffffffffff
+    b&
+    // smart_contracts/test_uint/contract.algo.ts:24
+    // const uint64 = new UintN64(lower64)
+    dup
+    len
+    intc_1 // 8
+    <=
+    assert // overflow
+    intc_1 // 8
+    bzero
+    b|
+    // smart_contracts/test_uint/contract.algo.ts:25
+    // return uint64
+    retsub

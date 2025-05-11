@@ -1,0 +1,161 @@
+{
+    "name": "TestUint",
+    "structs": {},
+    "methods": [
+        {
+            "name": "uint256Touint64",
+            "args": [
+                {
+                    "type": "uint256",
+                    "name": "n"
+                }
+            ],
+            "returns": {
+                "type": "uint64"
+            },
+            "actions": {
+                "create": [],
+                "call": [
+                    "NoOp"
+                ]
+            },
+            "readonly": true,
+            "events": [],
+            "recommendations": {}
+        },
+        {
+            "name": "uint256ToUintN64",
+            "args": [
+                {
+                    "type": "uint256",
+                    "name": "n"
+                }
+            ],
+            "returns": {
+                "type": "uint64"
+            },
+            "actions": {
+                "create": [],
+                "call": [
+                    "NoOp"
+                ]
+            },
+            "readonly": true,
+            "events": [],
+            "recommendations": {}
+        },
+        {
+            "name": "safeConversion",
+            "args": [
+                {
+                    "type": "uint256",
+                    "name": "n"
+                }
+            ],
+            "returns": {
+                "type": "uint64"
+            },
+            "actions": {
+                "create": [],
+                "call": [
+                    "NoOp"
+                ]
+            },
+            "readonly": true,
+            "events": [],
+            "recommendations": {}
+        }
+    ],
+    "arcs": [
+        22,
+        28
+    ],
+    "networks": {},
+    "state": {
+        "schema": {
+            "global": {
+                "ints": 0,
+                "bytes": 0
+            },
+            "local": {
+                "ints": 0,
+                "bytes": 0
+            }
+        },
+        "keys": {
+            "global": {},
+            "local": {},
+            "box": {}
+        },
+        "maps": {
+            "global": {},
+            "local": {},
+            "box": {}
+        }
+    },
+    "bareActions": {
+        "create": [
+            "NoOp"
+        ],
+        "call": []
+    },
+    "sourceInfo": {
+        "approval": {
+            "sourceInfo": [
+                {
+                    "pc": [
+                        51,
+                        70,
+                        89
+                    ],
+                    "errorMessage": "OnCompletion is not NoOp"
+                },
+                {
+                    "pc": [
+                        114
+                    ],
+                    "errorMessage": "can only call when creating"
+                },
+                {
+                    "pc": [
+                        54,
+                        73,
+                        92
+                    ],
+                    "errorMessage": "can only call when not creating"
+                },
+                {
+                    "pc": [
+                        121,
+                        133,
+                        160
+                    ],
+                    "errorMessage": "overflow"
+                }
+            ],
+            "pcOffsetMethod": "none"
+        },
+        "clear": {
+            "sourceInfo": [],
+            "pcOffsetMethod": "none"
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDEwCiNwcmFnbWEgdHlwZXRyYWNrIGZhbHNlCgovLyBAYWxnb3JhbmRmb3VuZGF0aW9uL2FsZ29yYW5kLXR5cGVzY3JpcHQvYXJjNC9pbmRleC5kLnRzOjpDb250cmFjdC5hcHByb3ZhbFByb2dyYW0oKSAtPiB1aW50NjQ6Cm1haW46CiAgICBpbnRjYmxvY2sgMSA4IDAKICAgIGJ5dGVjYmxvY2sgMHgxNTFmN2M3NQogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjQKICAgIC8vIGV4cG9ydCBjbGFzcyBUZXN0VWludCBleHRlbmRzIENvbnRyYWN0IHsKICAgIHR4biBOdW1BcHBBcmdzCiAgICBieiBtYWluX2JhcmVfcm91dGluZ0A4CiAgICBwdXNoYnl0ZXNzIDB4MjdjZGNmZjQgMHhkZjJiYjAyOSAweGRhMGI2MGYzIC8vIG1ldGhvZCAidWludDI1NlRvdWludDY0KHVpbnQyNTYpdWludDY0IiwgbWV0aG9kICJ1aW50MjU2VG9VaW50TjY0KHVpbnQyNTYpdWludDY0IiwgbWV0aG9kICJzYWZlQ29udmVyc2lvbih1aW50MjU2KXVpbnQ2NCIKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDAKICAgIG1hdGNoIG1haW5fdWludDI1NlRvdWludDY0X3JvdXRlQDMgbWFpbl91aW50MjU2VG9VaW50TjY0X3JvdXRlQDQgbWFpbl9zYWZlQ29udmVyc2lvbl9yb3V0ZUA1CgptYWluX2FmdGVyX2lmX2Vsc2VAMTI6CiAgICAvLyBzbWFydF9jb250cmFjdHMvdGVzdF91aW50L2NvbnRyYWN0LmFsZ28udHM6NAogICAgLy8gZXhwb3J0IGNsYXNzIFRlc3RVaW50IGV4dGVuZHMgQ29udHJhY3QgewogICAgaW50Y18yIC8vIDAKICAgIHJldHVybgoKbWFpbl9zYWZlQ29udmVyc2lvbl9yb3V0ZUA1OgogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjEzCiAgICAvLyBAYWJpbWV0aG9kKHsgcmVhZG9ubHk6IHRydWUgfSkKICAgIHR4biBPbkNvbXBsZXRpb24KICAgICEKICAgIGFzc2VydCAvLyBPbkNvbXBsZXRpb24gaXMgbm90IE5vT3AKICAgIHR4biBBcHBsaWNhdGlvbklECiAgICBhc3NlcnQgLy8gY2FuIG9ubHkgY2FsbCB3aGVuIG5vdCBjcmVhdGluZwogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjQKICAgIC8vIGV4cG9ydCBjbGFzcyBUZXN0VWludCBleHRlbmRzIENvbnRyYWN0IHsKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDEKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czoxMwogICAgLy8gQGFiaW1ldGhvZCh7IHJlYWRvbmx5OiB0cnVlIH0pCiAgICBjYWxsc3ViIHNhZmVDb252ZXJzaW9uCiAgICBieXRlY18wIC8vIDB4MTUxZjdjNzUKICAgIHN3YXAKICAgIGNvbmNhdAogICAgbG9nCiAgICBpbnRjXzAgLy8gMQogICAgcmV0dXJuCgptYWluX3VpbnQyNTZUb1VpbnRONjRfcm91dGVANDoKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czo5CiAgICAvLyBAYWJpbWV0aG9kKHsgcmVhZG9ubHk6IHRydWUgfSkKICAgIHR4biBPbkNvbXBsZXRpb24KICAgICEKICAgIGFzc2VydCAvLyBPbkNvbXBsZXRpb24gaXMgbm90IE5vT3AKICAgIHR4biBBcHBsaWNhdGlvbklECiAgICBhc3NlcnQgLy8gY2FuIG9ubHkgY2FsbCB3aGVuIG5vdCBjcmVhdGluZwogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjQKICAgIC8vIGV4cG9ydCBjbGFzcyBUZXN0VWludCBleHRlbmRzIENvbnRyYWN0IHsKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDEKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czo5CiAgICAvLyBAYWJpbWV0aG9kKHsgcmVhZG9ubHk6IHRydWUgfSkKICAgIGNhbGxzdWIgdWludDI1NlRvVWludE42NAogICAgYnl0ZWNfMCAvLyAweDE1MWY3Yzc1CiAgICBzd2FwCiAgICBjb25jYXQKICAgIGxvZwogICAgaW50Y18wIC8vIDEKICAgIHJldHVybgoKbWFpbl91aW50MjU2VG91aW50NjRfcm91dGVAMzoKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czo1CiAgICAvLyBAYWJpbWV0aG9kKHsgcmVhZG9ubHk6IHRydWUgfSkKICAgIHR4biBPbkNvbXBsZXRpb24KICAgICEKICAgIGFzc2VydCAvLyBPbkNvbXBsZXRpb24gaXMgbm90IE5vT3AKICAgIHR4biBBcHBsaWNhdGlvbklECiAgICBhc3NlcnQgLy8gY2FuIG9ubHkgY2FsbCB3aGVuIG5vdCBjcmVhdGluZwogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjQKICAgIC8vIGV4cG9ydCBjbGFzcyBUZXN0VWludCBleHRlbmRzIENvbnRyYWN0IHsKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDEKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czo1CiAgICAvLyBAYWJpbWV0aG9kKHsgcmVhZG9ubHk6IHRydWUgfSkKICAgIGNhbGxzdWIgdWludDI1NlRvdWludDY0CiAgICBpdG9iCiAgICBieXRlY18wIC8vIDB4MTUxZjdjNzUKICAgIHN3YXAKICAgIGNvbmNhdAogICAgbG9nCiAgICBpbnRjXzAgLy8gMQogICAgcmV0dXJuCgptYWluX2JhcmVfcm91dGluZ0A4OgogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjQKICAgIC8vIGV4cG9ydCBjbGFzcyBUZXN0VWludCBleHRlbmRzIENvbnRyYWN0IHsKICAgIHR4biBPbkNvbXBsZXRpb24KICAgIGJueiBtYWluX2FmdGVyX2lmX2Vsc2VAMTIKICAgIHR4biBBcHBsaWNhdGlvbklECiAgICAhCiAgICBhc3NlcnQgLy8gY2FuIG9ubHkgY2FsbCB3aGVuIGNyZWF0aW5nCiAgICBpbnRjXzAgLy8gMQogICAgcmV0dXJuCgoKLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjpUZXN0VWludC51aW50MjU2VG91aW50NjQobjogYnl0ZXMpIC0+IHVpbnQ2NDoKdWludDI1NlRvdWludDY0OgogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjUtNgogICAgLy8gQGFiaW1ldGhvZCh7IHJlYWRvbmx5OiB0cnVlIH0pCiAgICAvLyB1aW50MjU2VG91aW50NjQobjogVWludE4yNTYpOiB1aW50NjQgewogICAgcHJvdG8gMSAxCiAgICAvLyBzbWFydF9jb250cmFjdHMvdGVzdF91aW50L2NvbnRyYWN0LmFsZ28udHM6NwogICAgLy8gcmV0dXJuIG5ldyBVaW50TjY0KG4ubmF0aXZlKS5uYXRpdmUKICAgIGludGNfMiAvLyAwCiAgICBhc3NlcnQgLy8gb3ZlcmZsb3cKICAgIGludGNfMSAvLyA4CiAgICBiemVybwogICAgZnJhbWVfZGlnIC0xCiAgICBifAogICAgYnRvaQogICAgcmV0c3ViCgoKLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjpUZXN0VWludC51aW50MjU2VG9VaW50TjY0KG46IGJ5dGVzKSAtPiBieXRlczoKdWludDI1NlRvVWludE42NDoKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czo5LTEwCiAgICAvLyBAYWJpbWV0aG9kKHsgcmVhZG9ubHk6IHRydWUgfSkKICAgIC8vIHVpbnQyNTZUb1VpbnRONjQobjogVWludE4yNTYpOiBVaW50TjY0IHsKICAgIHByb3RvIDEgMQogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjExCiAgICAvLyByZXR1cm4gbmV3IFVpbnRONjQobi5uYXRpdmUpCiAgICBpbnRjXzIgLy8gMAogICAgYXNzZXJ0IC8vIG92ZXJmbG93CiAgICBpbnRjXzEgLy8gOAogICAgYnplcm8KICAgIGZyYW1lX2RpZyAtMQogICAgYnwKICAgIHJldHN1YgoKCi8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czo6VGVzdFVpbnQuc2FmZUNvbnZlcnNpb24objogYnl0ZXMpIC0+IGJ5dGVzOgpzYWZlQ29udmVyc2lvbjoKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czoxMy0xNAogICAgLy8gQGFiaW1ldGhvZCh7IHJlYWRvbmx5OiB0cnVlIH0pCiAgICAvLyBzYWZlQ29udmVyc2lvbihuOiBVaW50TjI1Nik6IFVpbnRONjQgewogICAgcHJvdG8gMSAxCiAgICAvLyBzbWFydF9jb250cmFjdHMvdGVzdF91aW50L2NvbnRyYWN0LmFsZ28udHM6MjEKICAgIC8vIGNvbnN0IGxvd2VyNjQ6IGJpZ3VpbnQgPSBuYXRpdmUyNTYgJiAoKDFuIDw8IDY0bikgLSAxbikKICAgIGZyYW1lX2RpZyAtMQogICAgcHVzaGJ5dGVzIDB4ZmZmZmZmZmZmZmZmZmZmZgogICAgYiYKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy90ZXN0X3VpbnQvY29udHJhY3QuYWxnby50czoyNAogICAgLy8gY29uc3QgdWludDY0ID0gbmV3IFVpbnRONjQobG93ZXI2NCkKICAgIGR1cAogICAgbGVuCiAgICBpbnRjXzEgLy8gOAogICAgPD0KICAgIGFzc2VydCAvLyBvdmVyZmxvdwogICAgaW50Y18xIC8vIDgKICAgIGJ6ZXJvCiAgICBifAogICAgLy8gc21hcnRfY29udHJhY3RzL3Rlc3RfdWludC9jb250cmFjdC5hbGdvLnRzOjI1CiAgICAvLyByZXR1cm4gdWludDY0CiAgICByZXRzdWIK",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDEwCiNwcmFnbWEgdHlwZXRyYWNrIGZhbHNlCgovLyBAYWxnb3JhbmRmb3VuZGF0aW9uL2FsZ29yYW5kLXR5cGVzY3JpcHQvYmFzZS1jb250cmFjdC5kLnRzOjpCYXNlQ29udHJhY3QuY2xlYXJTdGF0ZVByb2dyYW0oKSAtPiB1aW50NjQ6Cm1haW46CiAgICBwdXNoaW50IDEgLy8gMQogICAgcmV0dXJuCg=="
+    },
+    "byteCode": {
+        "approval": "CiADAQgAJgEEFR98dTEbQQBYggMEJ83P9ATfK7ApBNoLYPM2GgCOAwAoABUAAiRDMRkURDEYRDYaAYgATyhMULAiQzEZFEQxGEQ2GgGIADEoTFCwIkMxGRREMRhENhoBiAASFihMULAiQzEZQP+/MRgURCJDigEBJEQjr4v/qxeJigEBJEQjr4v/q4mKAQGL/4AI//////////+sSRUjDkQjr6uJ",
+        "clear": "CoEBQw=="
+    },
+    "compilerInfo": {
+        "compiler": "puya",
+        "compilerVersion": {
+            "major": 4,
+            "minor": 7,
+            "patch": 0
+        }
+    },
+    "events": [],
+    "templateVariables": {}
+}
