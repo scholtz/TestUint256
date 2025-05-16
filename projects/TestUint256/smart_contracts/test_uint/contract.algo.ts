@@ -34,7 +34,7 @@ export class TestUint extends Contract {
     assert(part1.native === 0, 'Buffer overflow - part1')
 
     const part2 = arc4.interpretAsArc4<arc4.UintN64>(bytes.slice(8, 16), 'none')
-    assert(part2.native === 0, 'Buffer overflow - part1')
+    assert(part2.native === 0, 'Buffer overflow - part2')
 
     const part3 = arc4.interpretAsArc4<arc4.UintN64>(bytes.slice(16, 24), 'none')
     assert(part3.native === 0, 'Buffer overflow - part3')
